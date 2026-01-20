@@ -1,5 +1,5 @@
 {
-  "name": "sauce-demo-automation",
+  "name": "youverify-task",
   "version": "1.0.0",
   "description": "Task",
   "main": "index.js",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deji2443/sauce-demo-automation.git"
+    "url": "git+https://github.com/deji2443/YouVerifyTask.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/deji2443/sauce-demo-automation/issues"
+    "url": "https://github.com/deji2443/YouVerifyTask/issues"
   },
-  "homepage": "https://github.com/deji2443/sauce-demo-automation#readme",
+  "homepage": "https://github.com/deji2443/YouVerifyTask#readme",
   "devDependencies": {
   "cypress": "^13.0.0",
   "cypress-mochawesome-reporter": "^3.8.0"
