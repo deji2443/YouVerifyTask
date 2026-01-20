@@ -1,7 +1,7 @@
 import LoginPage from '../page-objects/LoginPage';
 import InventoryPage from '../page-objects/InventoryPage';
 
-describe('SauceDemo End-to-End Flow', () => {
+describe('E-commerce End-to-End Flow', () => {
   const users = require('../fixtures/users.json');
 
   beforeEach(() => {
