@@ -6,8 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm install
-          start: npm start
+          # This will automatically handle the npm install for you
+          browser: chrome
+          spec: cypress/e2e/*.cy.js
