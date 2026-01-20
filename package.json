@@ -1,0 +1,26 @@
+{
+  "name": "sauce-demo-automation",
+  "version": "1.0.0",
+  "description": "Task",
+  "main": "index.js",
+"scripts": {
+    "test": "cypress run",
+    "report": "cypress run --reporter cypress-mochawesome-reporter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deji2443/sauce-demo-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/deji2443/sauce-demo-automation/issues"
+  },
+  "homepage": "https://github.com/deji2443/sauce-demo-automation#readme",
+  "devDependencies": {
+  "cypress": "^13.0.0",
+  "cypress-mochawesome-reporter": "^3.8.0"
+  }
+}
