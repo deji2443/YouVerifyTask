@@ -11,11 +11,11 @@ This automated QA Task is written with Cypress
     - npx cypress run --spec "cypress/e2e/login.cy.js"
     - npx cypress run --spec "cypress/e2e/search_checkout.cy.js"
 - Report will be saved in /cypress/reports/html/
-![alt text](/cypress/reports/screenshots/report.png)
+![Test Report](cypress/reports/screenshots/report.png)
 - You can open the index.html file in that directory to also see the report.
 - Github workflow is in .github/workflows/cypress.yml
 - Once any update is been pushed. CI/CD will automaticall run.
-![alt text](/cypress/reports/screenshots/1.png)
-![alt text](/cypress/reports/screenshots/2.png)
+![CI/CD](cypress/reports/screenshots/1.png)
+![CI/CD](cypress/reports/screenshots/2.png)
 
 
