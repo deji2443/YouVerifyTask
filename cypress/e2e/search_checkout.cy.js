@@ -9,16 +9,13 @@ describe('Specific Product Search & Checkout', () => {
     });
 
     it('should find a product and complete checkout using fixture data', () => {
-        // 1. Load the varying data inputs from the fixture file
         cy.fixture('testData').then((data) => {
             
-            // 2. Use data from fixture instead of hardcoded strings
             InventoryPage.addSpecificProductToCart(data.productName);
 
             InventoryPage.shoppingCartLink.click();
             InventoryPage.checkoutBtn.click();
             
-            // 3. Populate checkout with dynamic customer data
             InventoryPage.firstName.type(data.customer.firstName);
             InventoryPage.lastName.type(data.customer.lastName);
             InventoryPage.zipCode.type(data.customer.postalCode);
@@ -26,7 +23,6 @@ describe('Specific Product Search & Checkout', () => {
             InventoryPage.continueBtn.click();
             InventoryPage.finishBtn.click();
 
-            // 4. Assertion
             InventoryPage.successHeader
                 .should('be.visible')
                 .and('contain', 'Thank you for your order!');
