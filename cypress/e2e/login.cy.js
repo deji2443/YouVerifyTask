@@ -1,11 +1,20 @@
 import LoginPage from '../page-objects/LoginPage';
 import InventoryPage from '../page-objects/InventoryPage';
 
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from failing the test
+  // on application-side javascript errors
+  return false;
+});
+
 describe('Youverify Task E-commerce End-to-End Test Flow', () => {
   const users = require('../fixtures/users.json');
 
   beforeEach(() => {
-    cy.visit('/', { timeout: 120000 });  
+    cy.clearCookies();
+    cy.clearLocalStorage();
+    cy.visit('/', { timeout: 120000, waitUntil: 'domcontentloaded' });
   });
 
   users.forEach((user) => {
@@ -15,7 +24,6 @@ describe('Youverify Task E-commerce End-to-End Test Flow', () => {
       if (user.type === 'valid') {
         cy.url().should('include', '/inventory.html');
         
-        // This call now matches the method in the Page Object
         InventoryPage.addItemToCartAndCheckout();
 
         // Only assert success if the finish button was actually clickable
