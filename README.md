@@ -7,6 +7,9 @@ This automated QA Task is written with Cypress
 - npx cypress open                                                            
 - Run the specs after opening cypress
 - You can run the spec scripts after opening the cypress GUI.
+    ![Test Report](screenshots/4.png)
+    ![Test Report](screenshots/5.png)
+
 - You can as well run the E2E test with the followng
     - npx cypress run --spec "cypress/e2e/login.cy.js"
     - npx cypress run --spec "cypress/e2e/search_checkout.cy.js"
@@ -21,6 +24,7 @@ The HTML report is generated after test execution.
 
 ![Test Report](screenshots/report.png)
 ![Product Search](screenshots/product-search.png)
+![Test Report](screenshots/6.png)
 
 - Report will be saved in /cypress/reports/html/
 - You can open the index.html file in that directory to also see the report.
