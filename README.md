@@ -53,3 +53,16 @@ Once any update is pushed, the CI/CD pipeline runs automatically.
 - Download YouVerify_API_Task_JSONPlaceholder.json.
 
 - Import the file into your Postman Workspace.
+
+
+## Task 3: Case Study - Fintech Application Quality Strategy
+
+**Objective:** Diagnostic approach and test strategy for a crashing fintech application.
+
+* **Presentation File:** [Download PPTX](./case-study/Quality_Transformation_Strategy_for_Fintech_App.pptx)
+* **Google Slides (Live):** [View Presentation](https://docs.google.com/presentation/d/1SuTaWqWpu5qkH9oMtWyo8PeQh0Ycj3qhDAQg3nDFv6o/edit?usp=sharing)
+
+**Key Highlights:**
+- Focus on Error Monitoring (Sentry) and Root Cause Analysis.
+- Strategy for cross-device consistency using Cloud Device Farms.
+- Implementation of "Shift-Left" testing to prevent production crashes.
