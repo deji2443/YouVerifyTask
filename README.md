@@ -51,6 +51,7 @@ Once any update is pushed, the CI/CD pipeline runs automatically.
 - Navigate to the postman/ folder in this repo.
 
 - Download YouVerify_API_Task_JSONPlaceholder.json.
+* **JSON File:** [Download YouVerify_API_Task_JSONPlaceholder.json](./postman/YouVerify_API_Task.json)
 
 - Import the file into your Postman Workspace.
 
