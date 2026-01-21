@@ -1,7 +1,8 @@
 # YouVerifyTask
 This automated E2E QA Task is written with **Cypress** and **JavaScript**, following the **Page Object Model (POM)** design pattern.
  
-## Steps to run the code
+## Task 1
+### Steps to run the code
 - Clone the repo
 - npm install
 - npx cypress open                                                            
@@ -18,7 +19,7 @@ This automated E2E QA Task is written with **Cypress** and **JavaScript**, follo
     - npm install
     - npx cypress run
 
-## Test Report
+### Test Report
 
 The HTML report is generated after test execution.
 
@@ -32,7 +33,7 @@ The HTML report is generated after test execution.
 - Report will be saved in /cypress/reports/html/
 - You can open the index.html file in that directory to also see the report.
 
-## CI/CD Pipeline
+### CI/CD Pipeline
 
 Once any update is pushed, the CI/CD pipeline runs automatically.
 
@@ -44,4 +45,11 @@ Once any update is pushed, the CI/CD pipeline runs automatically.
 
 - Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners
 
+## Task 2
 
+### How to Access the API Collection
+- Navigate to the postman/ folder in this repo.
+
+- Download YouVerify_API_Task_JSONPlaceholder.json.
+
+- Import the file into your Postman Workspace.
