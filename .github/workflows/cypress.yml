@@ -42,3 +42,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-history
+
+      - name: Allure Report Summary
+        if: always()
+        run: |
+          echo "## Allure Report" >> $GITHUB_STEP_SUMMARY
+          echo "The report has been deployed to GitHub Pages." >> $GITHUB_STEP_SUMMARY
+          echo "[Click here to view the live report](https://deji2443.github.io/YouVerifyTask/)" >> $GITHUB_STEP_SUMMARY
+          
+      - name: Upload Allure Results as Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+          retention-days: 7

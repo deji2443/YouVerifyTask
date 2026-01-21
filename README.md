@@ -26,6 +26,9 @@ The HTML report is generated after test execution.
 ![Product Search](screenshots/product-search.png)
 ![Test Report](screenshots/6.png)
 
+- Allure is also added for clear, detailed and visual report
+[Link Text](https://deji2443.github.io/YouVerifyTask/)
+
 - Report will be saved in /cypress/reports/html/
 - You can open the index.html file in that directory to also see the report.
 
