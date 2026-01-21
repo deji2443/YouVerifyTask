@@ -3,10 +3,10 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://www.saucedemo.com',
-    // ADD THIS LINE BELOW
+
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}', 
-    modifyObstructiveCode: false, // Prevents Cypress from messing with JS that might hang
-    chromeWebSecurity: false,     // Allows cross-origin script blocking
+    modifyObstructiveCode: false, 
+    chromeWebSecurity: false,     
     pageLoadTimeout: 60000,
     retries: {
       runMode: 2,

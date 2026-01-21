@@ -10,12 +10,9 @@ describe('Specific Product Search & Checkout', () => {
     });
 
     it('should find the Bolt T-Shirt and complete checkout', () => {
-        // Find and add the specific product
         InventoryPage.addSpecificProductToCart(targetProduct);
 
-        // Fill checkout details
-        // Note: I'm using the individual steps if you renamed the method, 
-        // or you can call the combined one.
+   
         InventoryPage.shoppingCartLink.click();
         InventoryPage.checkoutBtn.click();
         
@@ -26,7 +23,6 @@ describe('Specific Product Search & Checkout', () => {
         InventoryPage.continueBtn.click();
         InventoryPage.finishBtn.click();
 
-        // Final Assertion
         InventoryPage.successHeader
             .should('be.visible')
             .and('contain', 'Thank you for your order!');

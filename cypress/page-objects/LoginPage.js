@@ -11,7 +11,7 @@ class LoginPage {
   //   this.loginButton.click();
   // }
   login(username, password) {
-    cy.log(`Logging in as ${username}`); // Standard Cypress logging
+    cy.log(`Logging in as ${username}`); 
     this.usernameInput.type(username);
     this.passwordInput.type(password);
     this.loginButton.click();

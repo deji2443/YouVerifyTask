@@ -9,7 +9,6 @@ class InventoryPage {
     get finishBtn() { return cy.get('[data-test="finish"]'); }
     get successHeader() { return cy.get('.complete-header'); }
 
-    // This is the specific method name your login.cy.js is calling
     addItemToCartAndCheckout() {
         cy.log('Adding first item to cart');
         this.firstAddToCartBtn.click();
@@ -18,12 +17,11 @@ class InventoryPage {
 
         cy.log('Filling out checkout information');
         this.firstName.type('John');
-        // Added {force:true} to help with the "problem_user" glitches
+
         this.lastName.type('Doe', { force: true }); 
         this.zipCode.type('12345');
         this.continueBtn.click();
 
-        // Check if we reached the finish page (prevents error on buggy users)
         cy.get('body').then(($body) => {
             if ($body.find('[data-test="finish"]').length > 0) {
                 cy.get('[data-test="finish"]').click();
@@ -33,7 +31,6 @@ class InventoryPage {
         });
     }
 
-    // This is for your new search test
     addSpecificProductToCart(productName) {
         cy.get('.inventory_item').contains(productName)
             .parents('.inventory_item')
