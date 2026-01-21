@@ -1,5 +1,5 @@
 # YouVerifyTask
-This automated QA Task is written with Cypress
+This automated E2E QA Task is written with **Cypress** and **JavaScript**, following the **Page Object Model (POM)** design pattern.
  
  Steps to run the code
 - Clone the repo
