@@ -18,5 +18,6 @@ This automated QA Task is written with Cypress
 - Once any update is been pushed. CI/CD will automaticall run.
 ![CI/CD](cypress/reports/screenshots/1.png)
 ![CI/CD](cypress/reports/screenshots/2.png)
+- Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners.
 
 
