@@ -10,6 +10,11 @@ This automated QA Task is written with Cypress
 - You can as well run the E2E test with the followng
     - npx cypress run --spec "cypress/e2e/login.cy.js"
     - npx cypress run --spec "cypress/e2e/search_checkout.cy.js"
+- If you ran into error running above E2E test. Run below Script
+    - rm -rf cypress/reports && npx cypress run
+    - npm install
+    - npx cypress run
+
 - Report will be saved in /cypress/reports/html/
 ![Test Report](cypress/reports/screenshots/report.png)
 ![Product Search](cypress/reports/screenshots/product-search.png)
