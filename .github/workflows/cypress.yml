@@ -58,3 +58,9 @@ jobs:
           name: full-allure-report
           path: allure-report
           retention-days: 5
+
+      - name: Install Newman
+        run: npm install -g newman newman-reporter-htmlextra
+
+      - name: Run Postman API Tests
+        run: newman run postman/YouVerify_API_Task.json -r cli,htmlextra --reporter-htmlextra-export postman/report.html

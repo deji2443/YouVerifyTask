@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "10ce188b-388a-4068-967b-bacf1c5872d8",
+    "name": "YouVerify_API_Task_JSONPlaceholder",
+    "description": "API Testing Suite for YouVerify Task using JSONPlaceholder API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7540841"
+  },
+  "item": [
+    {
+      "name": "A. Smoke Tests",
+      "item": [
+        {
+          "name": "API Health Check",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Smoke Test: Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Smoke Test: Response time is healthy\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(800);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "B. Integration & Functional Tests",
+      "item": [
+        {
+          "name": "Step 1: Create Resource",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"new_post_id\", jsonData.id);",
+                  "",
+                  "pm.test(\"Functional: Resource created with correct title\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "    pm.expect(jsonData.title).to.eql(\"YouVerify Task\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"YouVerify Task\",\n    \"body\": \"Testing API automation\",\n    \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Step 2: Update Resource (Integration)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Integration: Successfully updated created resource\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.json().title).to.include(\"Updated\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"Updated YouVerify Task\",\n    \"body\": \"Integration test update\",\n    \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "C. Regression Tests",
+      "item": [
+        {
+          "name": "Schema & Type Validation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const schema = {",
+                  "    \"type\": \"object\",",
+                  "    \"properties\": {",
+                  "        \"userId\": { \"type\": \"number\" },",
+                  "        \"id\": { \"type\": \"number\" },",
+                  "        \"title\": { \"type\": \"string\" },",
+                  "        \"body\": { \"type\": \"string\" }",
+                  "    },",
+                  "    \"required\": [\"userId\", \"id\", \"title\", \"body\"]",
+                  "};",
+                  "",
+                  "pm.test(\"Regression: Schema check for Post object\", function () {",
+                  "    pm.response.to.have.jsonSchema(schema);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative Test",
+      "item": [
+        {
+          "name": "Schema & Type Validation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const schema = {",
+                  "    \"type\": \"object\",",
+                  "    \"properties\": {",
+                  "        \"userId\": { \"type\": \"number\" },",
+                  "        \"id\": { \"type\": \"number\" },",
+                  "        \"title\": { \"type\": \"string\" },",
+                  "        \"body\": { \"type\": \"string\" }",
+                  "    },",
+                  "    \"required\": [\"userId\", \"id\", \"title\", \"body\"]",
+                  "};",
+                  "",
+                  "pm.test(\"Regression: Schema check for Post object\", function () {",
+                  "    pm.response.to.have.jsonSchema(schema);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "new_post_id",
+      "value": ""
+    }
+  ]
+}
