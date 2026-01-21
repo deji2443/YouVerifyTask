@@ -15,14 +15,26 @@ This automated QA Task is written with Cypress
     - npm install
     - npx cypress run
 
-- Report will be saved in /cypress/reports/html/
+## Test Report
+
+The HTML report is generated after test execution.
+
 ![Test Report](screenshots/report.png)
 ![Product Search](screenshots/product-search.png)
+
+- Report will be saved in /cypress/reports/html/
 - You can open the index.html file in that directory to also see the report.
+
+## CI/CD Pipeline
+
+Once any update is pushed, the CI/CD pipeline runs automatically.
+
+![CI/CD Step 1](screenshots/1.png)
+![CI/CD Step 2](screenshots/2.png)
+![CI/CD Step 3](screenshots/3.png)
+
 - Github CI/CD workflow is in .github/workflows/cypress.yml
-- Once any update is been pushed. CI/CD pipeline will automaticall run.
-![CI/CD](screenshots/1.png)
-![CI/CD](screenshots/2.png)
+
 - Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners.
 
 
