@@ -4,7 +4,6 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # Required to write the report to GitHub Pages
     permissions:
       contents: write
     
@@ -16,7 +15,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          # Pass the allure environment variable here
+          # This creates a native table summary inside the Actions tab
+          publish-summary: true
           env: allure=true
           spec: cypress/e2e/*.cy.js
 
@@ -43,17 +43,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-history
 
-      - name: Allure Report Summary
+      - name: Create Custom GitHub Summary
         if: always()
         run: |
-          echo "## Allure Report" >> $GITHUB_STEP_SUMMARY
-          echo "The report has been deployed to GitHub Pages." >> $GITHUB_STEP_SUMMARY
-          echo "[Click here to view the live report](https://deji2443.github.io/YouVerifyTask/)" >> $GITHUB_STEP_SUMMARY
-          
-      - name: Upload Allure Results as Artifact
+          echo "### Test Execution Complete 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "Detailed interactive reports and historical trends are available below:" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 [View Live Allure Report](https://deji2443.github.io/YouVerifyTask/)" >> $GITHUB_STEP_SUMMARY
+          echo "- 📂 Download the **full-allure-report** artifact from the bottom of this page to view offline." >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Report Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
-          retention-days: 7
+          name: full-allure-report
+          path: allure-report
+          retention-days: 5
