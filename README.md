@@ -39,6 +39,6 @@ Once any update is pushed, the CI/CD pipeline runs automatically.
 
 - Github CI/CD workflow is in .github/workflows/cypress.yml
 
-- Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners.
+- Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners
 
 
