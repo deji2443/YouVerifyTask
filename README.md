@@ -16,13 +16,13 @@ This automated QA Task is written with Cypress
     - npx cypress run
 
 - Report will be saved in /cypress/reports/html/
-![Test Report](cypress/screenshots/report.png)
-![Product Search](cypress/screenshots/product-search.png)
+![Test Report](screenshots/report.png)
+![Product Search](screenshots/product-search.png)
 - You can open the index.html file in that directory to also see the report.
 - Github workflow is in .github/workflows/cypress.yml
 - Once any update is been pushed. CI/CD will automaticall run.
-![CI/CD](cypress/screenshots/1.png)
-![CI/CD](cypress/screenshots/2.png)
+![CI/CD](screenshots/1.png)
+![CI/CD](screenshots/2.png)
 - Tests pass 100% locally. CI/CD failures are due to environment timeouts on GitHub runners.
 
 

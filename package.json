@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Task",
   "main": "index.js",
-"scripts": {
-    "test": "cypress run",
-    "report": "cypress run --reporter cypress-mochawesome-reporter"
-  },
+  "scripts": {
+  "clean:reports": "rm -rf cypress/reports",
+  "pretest": "npm run clean:reports",
+  "test": "npx cypress run",
+  "report:generate": "npx mochawesome-merge cypress/reports/html/.jsons/*.json > cypress/reports/report.json && npx marge cypress/reports/report.json -o cypress/reports/html"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deji2443/YouVerifyTask.git"
