@@ -5,6 +5,9 @@ module.exports = defineConfig({
     baseUrl: 'https://www.saucedemo.com',
     // ADD THIS LINE BELOW
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}', 
+    modifyObstructiveCode: false, // Prevents Cypress from messing with JS that might hang
+    chromeWebSecurity: false,     // Allows cross-origin script blocking
+    pageLoadTimeout: 60000,
     retries: {
       runMode: 2,
       openMode: 0,

@@ -1,26 +1,34 @@
-import LoginPage from "../page-objects/LoginPage";
-import InventoryPage from "../page-objects/InventoryPage";
+import LoginPage from '../page-objects/LoginPage';
+import InventoryPage from '../page-objects/InventoryPage';
 
-describe("Specific Product Search & Checkout", () => {
-  const targetProduct = "Sauce Labs Bolt T-Shirt";
+describe('Specific Product Search & Checkout', () => {
+    const targetProduct = 'Sauce Labs Bolt T-Shirt';
 
-  beforeEach(() => {
-    // Your stability interceptors
-    // cy.intercept('POST', '**/backtrace.io/**', { statusCode: 200, body: {} });
+    beforeEach(() => {
+        cy.visit('/');
+        LoginPage.login('standard_user', 'secret_sauce');
+    });
 
-    cy.intercept("POST", "https://events.backtrace.io/**", {
-      body: {},
-      statusCode: 200,
-    }).as("blockBacktrace");
+    it('should find the Bolt T-Shirt and complete checkout', () => {
+        // Find and add the specific product
+        InventoryPage.addSpecificProductToCart(targetProduct);
 
-    cy.visit("/", { waitUntil: "domcontentloaded" });
+        // Fill checkout details
+        // Note: I'm using the individual steps if you renamed the method, 
+        // or you can call the combined one.
+        InventoryPage.shoppingCartLink.click();
+        InventoryPage.checkoutBtn.click();
+        
+        InventoryPage.firstName.type('Habib');
+        InventoryPage.lastName.type('Tester');
+        InventoryPage.zipCode.type('10001');
+        
+        InventoryPage.continueBtn.click();
+        InventoryPage.finishBtn.click();
 
-    // This line caused the error because LoginPage wasn't imported
-    LoginPage.login("standard_user", "secret_sauce");
-  });
-
-  it("should find the Bolt T-Shirt and complete checkout", () => {
-    InventoryPage.addSpecificProductToCart(targetProduct);
-    // ... rest of your code
-  });
+        // Final Assertion
+        InventoryPage.successHeader
+            .should('be.visible')
+            .and('contain', 'Thank you for your order!');
+    });
 });
