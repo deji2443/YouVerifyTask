@@ -1,7 +1,7 @@
 # YouVerifyTask
 This automated E2E QA Task is written with **Cypress** and **JavaScript**, following the **Page Object Model (POM)** design pattern.
  
- Steps to run the code
+## Steps to run the code
 - Clone the repo
 - npm install
 - npx cypress open                                                            
@@ -27,7 +27,7 @@ The HTML report is generated after test execution.
 ![Test Report](screenshots/6.png)
 
 - Allure is also added for clear, detailed and visual report
-[Link Text](https://deji2443.github.io/YouVerifyTask/)
+[Report Link](https://deji2443.github.io/YouVerifyTask/)
 
 - Report will be saved in /cypress/reports/html/
 - You can open the index.html file in that directory to also see the report.
