@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","663","Testing user: problem_user","","Wed Jan 21 13:39:08 UTC 2026","passed","Wed Jan 21 13:39:08 UTC 2026","","Youverify CI Stability Suite","",""
+"","2065","should find a product and complete checkout using fixture data","","Wed Jan 21 13:39:17 UTC 2026","passed","Wed Jan 21 13:39:19 UTC 2026","","Specific Product Search & Checkout","",""
+"","4800","should find the Bolt T-Shirt and complete checkout","","Wed Jan 21 12:00:11 UTC 2026","passed","Wed Jan 21 12:00:16 UTC 2026","","Specific Product Search & Checkout","",""
+"","821","Testing user: locked_out_user","","Wed Jan 21 13:39:07 UTC 2026","passed","Wed Jan 21 13:39:08 UTC 2026","","Youverify CI Stability Suite","",""
+"","2916","Testing user: standard_user","","Wed Jan 21 13:39:04 UTC 2026","passed","Wed Jan 21 13:39:07 UTC 2026","","Youverify CI Stability Suite","",""
+"","6768","Testing user: performance_glitch_user","","Wed Jan 21 13:39:08 UTC 2026","passed","Wed Jan 21 13:39:15 UTC 2026","","Youverify CI Stability Suite","",""
