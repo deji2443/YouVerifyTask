@@ -59,7 +59,7 @@ jobs:
       - name: Run Postman API Tests
         # --- FIX 2: Check if your file is in a folder or root. 
         # If it's in the root, remove 'postman/' from the path below ---
-        run: newman run YouVerify_API_Task.json -r cli,htmlextra --reporter-htmlextra-export api-report.html
+        run: newman run postman/YouVerify_API_Task.json -r cli,htmlextra --reporter-htmlextra-export api-report.html
         continue-on-error: true
 
       - name: Upload Report Artifacts
